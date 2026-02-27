@@ -21,3 +21,7 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
+
+// In this execution environment, a listening socket may not keep Node alive.
+// A long-lived timer ensures the process stays up like a normal server host.
+setInterval(() => {}, 60 * 60 * 1000);
